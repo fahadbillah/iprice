@@ -16,7 +16,7 @@ export class AppComponent {
 
   onSubmit(text) {
     console.log(text, 'test');
-    const input = !!text.input ? text.input : "hello world";
+    const input = !!text.input ? text.input : "default message";
     
     this.makeUppercase(input);
     this.makeAltercase(input);
@@ -32,14 +32,12 @@ export class AppComponent {
     input.split('').forEach((char, idx)=>{
       this.showAlterCase += (idx % 2 === 0) ? char.toUpperCase() : char.toLowerCase();
     });
-    console.log(this.showAlterCase);
   }
 
   makeCSV(input: String): void{
     this.showCSV = '';
     const blob = new Blob([input.split(' ').join(',')], {type : 'text/csv;charset=utf-8;'})
     this.showCSV = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(blob));
-    console.log(blob, this.showCSV)
   }
 
 }

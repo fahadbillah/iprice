@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "prod": "ng build --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -43,5 +44,8 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
+  },
+  "resolutions": {
+    "terser-webpack-plugin/serialize-javascript": ">=2.1.1"
   }
 }
