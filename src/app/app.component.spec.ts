@@ -45,9 +45,9 @@ describe('AppComponent', () => {
     app.makeCSV('hello world');
     fixture.detectChanges();
     const debugEl = fixture.debugElement;
-    
+
     const href = debugEl.query(By.css('a')).nativeElement.getAttribute('href');
-    console.log('%%%%%%%%%%%%', href)
+    console.log('%%%%%%%%%%%%', href);
     expect(href).toContain('blob:http');
   });
 });
