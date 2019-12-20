@@ -36,7 +36,7 @@ export class AppComponent {
 
   makeCSV(input: string): void {
     this.showCSV = '';
-    const blob = new Blob([input.split(' ').join(',')], {type : 'text/csv;charset=utf-8;'});
+    const blob = new Blob([input.split('').join(',')], {type : 'text/csv;charset=utf-8;'});
     this.showCSV = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(blob));
   }
 
